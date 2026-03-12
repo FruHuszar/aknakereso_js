@@ -3,14 +3,20 @@
     src: url("../ttf/NeueHaasDisplayRoman.ttf");
 }
 
+@font-face {
+    font-family: Num;
+    src: url("../ttf/Minesweeper-Regular.ttf");
+}
+
 :root {
-    --color-bg: #313628;
-    --color-font: bisque;
-    --color-active: beige;
-    --color-board-bg: grey;
+    --color-bg: DarkSlateBlue;
+    --color-font: beige;
+    --color-active: Indigo;
+    --color-board-bg: MediumPurple;
     --color-black: black;
     --color-white: azure;
     --font-sans: Neue;
+    --font-num: Num;
 }
 
 ::selection {
@@ -104,6 +110,7 @@ button:active {
 .box p {
     color: red;
     font-weight: bold;
+    font-family: var(--font-num);
 }
 
 @media (max-width:480px) {
