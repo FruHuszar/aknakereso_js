@@ -9,7 +9,7 @@ function drawBoard(x, y, shuffle) {
     for (let i = 0; i < x * y; i++) {
         boardArray.push({
             id: i,
-            isBomb: false,
+            mineField: false,
         });
     }
     
@@ -35,7 +35,7 @@ function shuffleBoard(array) {
 
 function placeBombs() {
     for (let i = 0; i < bombsCount; i++) {
-        boardArray[i].isBomb = true;
+        boardArray[i].mineField = true;
     }
 }
 
@@ -56,7 +56,7 @@ function eventsShowField() {
             let index = this.getAttribute("data-index");
             let field = boardArray[index];
 
-            if (field.isBomb) {
+            if (field.mineField) {
                 this.innerHTML = `<p>○</p>`;
                 this.style.backgroundColor = "red";
                 setTimeout(() => alert("Vesztettél!"), 10);
@@ -78,7 +78,7 @@ function countBombs(index) {
         for (let c = -1; c <= 1; c++) {
             let ni = (row + r) * size + (col + c);
             if (row + r >= 0 && row + r < size && col + c >= 0 && col + c < size) {
-                if (boardArray[ni].isBomb) count++;
+                if (boardArray[ni].mineField) count++;
             }
         }
     }
