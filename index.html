@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aknakereső js | Fru Huszar</title>
+    <link rel="stylesheet" href="css/style.css?v=6">
+    <link rel="stylesheet" href="css/footer.css?v=4">
+  
+    <script>
+    window.addEventListener('error', function(e) {
+        if (e.target.tagName) {
+            alert(
+                "ERŐFORRÁS HIBA\n" +
+                "Nem tölthető be: " + (e.target.src || e.target.href) + "\n" +
+                "Elem típusa: " + e.target.tagName
+            );
+        } else {
+            alert(
+                "RUNTIME HIBA\n" +
+                "Error: " + e.message + "\n\n" +
+                "Fájl: " + e.filename + "\n" +
+                "Hely: " + e.lineno + ". sor, " + e.colno + ". oszlop"
+            );
+        }
+    }, true);
+    </script>
+
+    <script type="module" src="js/main.js?v=4"></script>
+</head>
+<body>
+    <main>
+        <h1>JS Aknakereső Játék</h1>
+        <div id="board"></div>
+        <button>Új játék</button>
+  
+        <footer>
+            <div>
+                <a href="https://github.com/FruHuszar" target="_blank"><img src="https://github.com/FruHuszar.png" alt="profile picture"
+                        id="profile"></a>
+                <p>♥ Fru</p>
+            </div>
+            <div>
+                <p>2.5h spent</p>
+                <span class="img-container">
+                    <a href="javascript:void(0);" id="heart-button"><img src="img/heart.png" alt="heart ikon, kattints az oldal beszívezéséhez."></a>
+                    <a href="https://www.cgtrader.com/designers/71yui" target="_blank"><img src="img/3d.png"
+                            alt="3d ikon, erre kattintással átmehetsz a 3d oldalamra."></a>
+                    <a href="index.html"><img src="img/refresh.png"
+                            alt="refresh ikon, ezzel újratöltheted az oldalt."></a>
+                </span>
+            </div>
+        </footer>
+    </main>
+
+</body>
+</html>
